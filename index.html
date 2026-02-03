@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ลงทะเบียนงานเลี้ยงปีใหม่ 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Prompt', sans-serif;
+            background: linear-gradient(180deg, #E0F7FA 0%, #FFFFFF 100%);
+            overflow-x: hidden;
+        }
+        .snow-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background-image: url('https://www.google.com/maps/place/%E0%B9%80%E0%B8%AA%E0%B8%A7%E0%B8%A2+%E0%B8%A3%E0%B8%B4%E0%B9%80%E0%B8%A7%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%A7%E0%B8%B4%E0%B8%A7+%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A3%E0%B8%B2%E0%B8%A13/@13.6718117,100.5432219,17z/data=!3m1!4b1!4m6!3m5!1s0x30e2a1e056c604d1:0xdcff23986d95eaf3!8m2!3d13.6718117!4d100.5432219!16s%2Fg%2F1tdsg6p4?entry=ttu&g_ep=EgoyMDI2MDEyOC4wIKXMDSoASAFQAw%3D%3D');
+            animation: snow 20s linear infinite;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        @keyframes snow {
+            0% { background-position: 0 0; }
+            100% { background-position: 0 500px; }
+        }
+        .card-glass {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-start p-4 relative py-12">
+
+    <div class="snow-bg"></div>
+
+    <div class="max-w-md w-full card-glass rounded-2xl p-8 relative z-10 text-center mb-8">
+        <div class="text-6xl mb-4">❄️🧣🧤</div>
+
+        <h1 class="text-2xl font-bold text-slate-700 mb-1">งานเลี้ยงปีใหม่ประจำปี 2026</h1>
+        <p class="text-sky-600 font-semibold mb-6">#หนาวนี้กอดใครหนาวไหมกอดกัน</p>
+
+        <div class="bg-white/60 rounded-xl p-4 mb-6 text-sm text-slate-600 shadow-sm border border-slate-100 text-left space-y-2">
+            <p><strong>📅 วันที่:</strong> ศุกร์ที่ 19 ธันวาคม 2568</p>
+            <p><strong>📍 สถานที่:</strong> <a href="https://www.google.com/maps/place/%E0%B9%80%E0%B8%AA%E0%B8%A7%E0%B8%A2+%E0%B8%A3%E0%B8%B4%E0%B9%80%E0%B8%A7%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%A7%E0%B8%B4%E0%B8%A7+%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A3%E0%B8%B2%E0%B8%A13/@13.6716804,100.5407952,17z/data=!3m1!4b1!4m6!3m5!1s0x30e2a1e056c604d1:0xdcff23986d95eaf3!8m2!3d13.6716804!4d100.5433701!16s%2Fg%2F1tdsg6p4?entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D" target="_blank" class="text-sky-500 underline hover:text-sky-700">ร้าน เสวย ริเวอร์วิว พระราม 3</a></p>
+            <p><strong>🕠 เวลา:</strong> 17:30 น. เป็นต้นไป</p>
+            <p><strong>✨ ธีม:</strong> Cozy Winter</p>
+        </div>
+
+        <form id="rsvpForm" class="space-y-4 text-left" onsubmit="submitForm(event)">
+            
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-slate-700 text-sm font-bold mb-2">ชื่อ</label>
+                    <input type="text" id="firstName" required placeholder="ชื่อ" class="w-full px-4 py-2 rounded-lg border border-slate-300 focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400 bg-white/80">
+                </div> 
+                <div>
+                    <label class="block text-slate-700 text-sm font-bold mb-2">นามสกุล</label>
+                    <input type="text" id="lastName" required placeholder="นามสกุล" class="w-full px-4 py-2 rounded-lg border border-slate-300 focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400 bg-white/80">
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-slate-700 text-sm font-bold mb-2">แผนก</label>
+                <select id="positionSelect" required onchange="calculateGift()" class="w-full px-4 py-2 rounded-lg border border-slate-300 focus:outline-none focus:border-sky-400 bg-white/80">
+                    <option value="" disabled selected>-- กรุณาเลือกแผนก --</option>
+                    <option value="สิทธิบัตร">สิทธิบัตร</option>
+                    <option value="เครื่องหมายการค้า">เครื่องหมายการค้า</option>
+                    <option value="บัญชี">บัญชี</option>
+                    <option value="ไอที">ไอที</option>
+                </select>
+            </div>
+
+            <div>
+                <label class="block text-slate-700 text-sm font-bold mb-2">กิจกรรมจับฉลากของขวัญ 🎁</label>
+                <div class="flex space-x-4">
+                    <label class="inline-flex items-center cursor-pointer">
+                        <input type="radio" name="giftOption" value="yes" onclick="calculateGift()" class="form-radio text-sky-500 h-5 w-5" checked>
+                        <span class="ml-2 text-slate-700">เข้าร่วม</span>
+                    </label>
+                    <label class="inline-flex items-center cursor-pointer">
+                        <input type="radio" name="giftOption" value="no" onclick="calculateGift()" class="form-radio text-gray-400 h-5 w-5">
+                        <span class="ml-2 text-slate-700">ไม่สะดวกเข้าร่วม</span>
+                    </label>
+                </div>
+            </div>
+
+            <div id="giftSection" class="hidden bg-sky-50 border-l-4 border-sky-400 p-4 rounded-r transition-all duration-300">
+                <div class="flex">
+                    <div class="flex-shrink-0"><span class="text-xl">ℹ️</span></div>
+                    <div class="ml-3">
+                        <p class="text-sm text-sky-800 font-bold">เงื่อนไขสำหรับแผนกของคุณ</p>
+                        <p id="giftAmount" class="text-sm text-sky-700 mt-1">...</p>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <label class="inline-flex items-center cursor-pointer">
+                        <input type="checkbox" id="giftAck" class="form-checkbox h-5 w-5 text-sky-600 rounded">
+                        <span class="ml-2 text-sm text-slate-700">รับทราบและเตรียมของขวัญตามยอด</span>
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit" class="w-full bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 rounded-lg shadow-lg transition duration-300 transform hover:-translate-y-1 mt-4">
+                ลงชื่อเข้าร่วมงาน ✨
+            </button>
+        </form>
+    </div>
+
+    <div class="max-w-md w-full z-10">
+        <div class="card-glass rounded-xl overflow-hidden">
+            <button onclick="toggleAttendeeList()" class="w-full px-6 py-4 flex justify-between items-center bg-white/50 hover:bg-white/80 transition-colors">
+                <span class="font-bold text-slate-700 flex items-center">
+                    <span class="mr-2">📝</span> รายชื่อผู้ลงทะเบียนแล้ว 
+                    <span id="attendeeCount" class="ml-2 bg-sky-500 text-white text-xs px-2 py-1 rounded-full">0</span>
+                </span>
+                <span id="chevronIcon" class="transform transition-transform duration-300">▼</span>
+            </button>
+            
+            <div id="attendeeListContent" class="hidden border-t border-slate-100 max-h-64 overflow-y-auto">
+                <table class="w-full text-left text-sm text-slate-600">
+                    <thead class="bg-slate-50 sticky top-0">
+                        <tr>
+                            <th class="px-4 py-2">ชื่อ-นามสกุล</th>
+                            <th class="px-4 py-2">แผนก</th>
+                            <th class="px-4 py-2 text-center">จับฉลาก</th>
+                        </tr>
+                    </thead>
+                    <tbody id="attendeeTableBody">
+                        <tr id="emptyRow">
+                            <td colspan="3" class="px-4 py-8 text-center text-slate-400 italic">ยังไม่มีผู้ลงทะเบียน</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let attendees = [];
+
+        function toggleAttendeeList() {
+            const content = document.getElementById('attendeeListContent');
+            const icon = document.getElementById('chevronIcon');
+            content.classList.toggle('hidden');
+            icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+        }
+
+        function calculateGift() {
+            const position = document.getElementById('positionSelect').value;
+            const giftOption = document.querySelector('input[name="giftOption"]:checked').value;
+            const giftSection = document.getElementById('giftSection');
+            const giftAmount = document.getElementById('giftAmount');
+            const giftAck = document.getElementById('giftAck');
+
+            if (giftOption === 'no') {
+                giftSection.classList.add('hidden');
+                giftAck.required = false;
+                return;
+            }
+
+            if (position === "") {
+                giftSection.classList.remove('hidden');
+                giftAmount.innerHTML = "กรุณาเลือกแผนกด้านบน เพื่อดูยอดเงิน";
+                giftAck.required = false;
+                return;
+            }
+
+            giftSection.classList.remove('hidden');
+            giftAck.required = true;
+            giftAmount.innerHTML = "เตรียมของขวัญมูลค่าอย่างน้อย: <strong class='text-lg'>500 บาท</strong>";
+        }
+
+        function submitForm(e) {
+            e.preventDefault();
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const dept = document.getElementById('positionSelect').value;
+            const giftOption = document.querySelector('input[name="giftOption"]:checked').value;
+            
+            // เพิ่มข้อมูลลงใน Array
+            attendees.push({
+                name: `${firstName} ${lastName}`,
+                dept: dept,
+                gift: giftOption === 'yes' ? '✅' : '❌'
+            });
+
+            updateAttendeeTable();
+
+            let msg = `✅ ลงชื่อคุณ ${firstName} เรียบร้อยแล้ว!\n`;
+            if(giftOption === 'yes') {
+                msg += "🎁 อย่าลืมเตรียมของขวัญมาจับฉลากด้วยนะครับ";
+            } else {
+                msg += "😊 แล้วมาจอยกันในงานนะครับ";
+            }
+            
+            alert(msg);
+            document.getElementById('rsvpForm').reset();
+            calculateGift(); 
+        }
+
+        function updateAttendeeTable() {
+            const tbody = document.getElementById('attendeeTableBody');
+            const countBadge = document.getElementById('attendeeCount');
+            
+            if (attendees.length > 0) {
+                tbody.innerHTML = ''; // ล้างแถวว่าง
+                attendees.forEach(person => {
+                    const row = `
+                        <tr class="border-b border-slate-50 hover:bg-sky-50/30 transition-colors">
+                            <td class="px-4 py-3 font-medium">${person.name}</td>
+                            <td class="px-4 py-3 text-slate-500">${person.dept}</td>
+                            <td class="px-4 py-3 text-center">${person.gift}</td>
+                        </tr>
+                    `;
+                    tbody.insertAdjacentHTML('beforeend', row);
+                });
+                countBadge.innerText = attendees.length;
+            }
+        }
+    </script>
+</body>
+</html>
